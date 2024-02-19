@@ -45,7 +45,7 @@ public class MeleeBaseState : State
         //}
 
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (UserInput.Instance.Attack_Input_Pressed)
         {
             AttackPressedTimer = 2;
         }
