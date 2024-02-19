@@ -9,6 +9,7 @@ public class ComboCharacter : MonoBehaviour
     [SerializeField] public GameObject Hiteffect;
 
     public Rigidbody2D playerRb;
+    public Animator animator;
     public float speed;
     public float jumpForce;
     public bool isLeft;
@@ -25,6 +26,16 @@ public class ComboCharacter : MonoBehaviour
         if (UserInput.Instance.Attack_Input_Pressed && meleeStateMachine.CurrentState.GetType() == typeof(IdleCombatState))
         {
             meleeStateMachine.SetNextState(new GroundEntryState());
+        }
+
+
+        if (UserInput.Instance.MoveInput.x != 0)
+        {
+            animator.SetBool("walk", true);
+        }
+        else
+        {
+            animator.SetBool("walk", false);
         }
 
         playerRb.velocity = new Vector2(UserInput.Instance.MoveInput.x * speed, playerRb.velocity.y);
