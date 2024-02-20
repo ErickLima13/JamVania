@@ -6,14 +6,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private Animator animator;
 
-    public float speed;
-    public float jumpForce;
+    private bool isLeft;
+    private bool isAttack;
 
-    public bool isLeft;
-    public bool isAttack;
+    private int attackCounter;
 
-    public int attackCounter;
-    public float attackTimer;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float attackTimer;
 
     void Start()
     {
@@ -22,6 +22,21 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
+    {
+        Move();
+        MainAttack();
+        Jump();
+    }
+
+    private void Flip()
+    {
+        isLeft = !isLeft;
+        float scaleX = transform.localScale.x;
+        scaleX *= -1f;
+        transform.localScale = new(scaleX, transform.localScale.y, transform.localScale.z);
+    }
+
+    private void Move()
     {
         if (UserInput.Instance.MoveInput.x != 0)
         {
@@ -34,11 +49,6 @@ public class PlayerController : MonoBehaviour
 
         playerRb.velocity = new Vector2(UserInput.Instance.MoveInput.x * speed, playerRb.velocity.y);
 
-        if (UserInput.Instance.Jump_Input_Pressed)
-        {
-            playerRb.AddForce(new(0, jumpForce));
-        }
-
         if (isLeft && UserInput.Instance.MoveInput.x > 0)
         {
             Flip();
@@ -48,9 +58,18 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
+    }
 
-       
+    private void Jump()
+    {
+        if (UserInput.Instance.Jump_Input_Pressed)
+        {
+            playerRb.AddForce(new(0, jumpForce));
+        }
+    }
 
+    private void MainAttack()
+    {
         if (UserInput.Instance.Attack_Input_Pressed && !isAttack)
         {
             isAttack = true;
@@ -63,9 +82,9 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetTrigger("attack" + 1);
                 attackCounter++;
-                
+
             }
-            else if(attackCounter == 1)
+            else if (attackCounter == 1)
             {
                 animator.SetTrigger("attack" + 2);
                 attackCounter++;
@@ -75,19 +94,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("attack" + 3);
                 attackCounter = 0;
             }
-
-        }
-
-
-
-    }
-
-    private void Flip()
-    {
-        isLeft = !isLeft;
-        float scaleX = transform.localScale.x;
-        scaleX *= -1f;
-        transform.localScale = new(scaleX, transform.localScale.y, transform.localScale.z);
+        }     
     }
 
     private IEnumerator ComboAttack()

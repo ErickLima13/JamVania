@@ -529,12 +529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.8
-  jumpForce: 125
-  isLeft: 0
-  isAttack: 0
-  attackCounter: 0
+  jumpForce: 130
   attackTimer: 1
-  timer: 0
 --- !u!1 &1591469909
 GameObject:
   m_ObjectHideFlags: 0
