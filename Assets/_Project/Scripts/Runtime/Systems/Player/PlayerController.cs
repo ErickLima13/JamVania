@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRb;
     private Animator animator;
+    private HitBox hitBox;
 
     private bool isLeft;
     private bool isAttack;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        hitBox = GetComponentInChildren<HitBox>();
     }
 
     void Update()
@@ -95,15 +97,17 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetTrigger("attack" + 1);
                 attackCounter++;
-
+                hitBox.SetDamage(attackCounter);
             }
             else if (attackCounter == 1)
-            {
+            {            
                 animator.SetTrigger("attack" + 2);
                 attackCounter++;
+                hitBox.SetDamage(attackCounter);
             }
             else if (attackCounter == 2)
             {
+                hitBox.SetDamage(attackCounter);
                 animator.SetTrigger("attack" + 3);
                 attackCounter = 0;
             }
