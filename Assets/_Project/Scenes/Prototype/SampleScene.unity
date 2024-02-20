@@ -356,10 +356,9 @@ GameObject:
   - component: {fileID: 586681012}
   - component: {fileID: 586681011}
   - component: {fileID: 586681010}
-  - component: {fileID: 586681014}
-  - component: {fileID: 586681013}
   - component: {fileID: 586681017}
   - component: {fileID: 586681018}
+  - component: {fileID: 586681019}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -455,38 +454,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &586681013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586681009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4329b45174033774a9d7bd823fb5a4d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customName: Combat
---- !u!114 &586681014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586681009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95b56deda9fd8394ba703d82ca4ac424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 0}
-  Hiteffect: {fileID: 0}
-  playerRb: {fileID: 586681017}
-  animator: {fileID: 586681010}
-  speed: 0.8
-  jumpForce: 150
-  isLeft: 0
 --- !u!50 &586681017
 Rigidbody2D:
   serializedVersion: 4
@@ -549,6 +516,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.16}
   m_Size: {x: 0.15, y: 0.32}
   m_Direction: 0
+--- !u!114 &586681019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586681009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7766f028656664092fb48babade18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.8
+  jumpForce: 125
+  isLeft: 0
+  isAttack: 0
+  attackCounter: 0
+  attackTimer: 1
+  timer: 0
 --- !u!1 &1591469909
 GameObject:
   m_ObjectHideFlags: 0
