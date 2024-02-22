@@ -1,8 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
+public enum StatusTag
+{
+    Enemy,
+    Player
+}
+
 public class Status : MonoBehaviour
 {
+    public StatusTag statusTag;   
+
     public event Action OnDie;
 
     [SerializeField] private GameObject hitPrefab;
@@ -14,8 +22,6 @@ public class Status : MonoBehaviour
         //GameObject temp = Instantiate(hitPrefab, transform.position, Quaternion.identity);
         //Destroy(temp, 0.5f);
         maxLife -= value;
-
-        print(value);
 
         if (maxLife <= 0)
         {
