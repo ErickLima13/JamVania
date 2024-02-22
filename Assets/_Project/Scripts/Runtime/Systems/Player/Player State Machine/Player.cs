@@ -115,6 +115,16 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    public bool TryDoubleJump()
+    {
+        if (InputControl.Jump_Input_Pressed && playerData.canDoubleJump && playerData.doubleJumpEnable && !isGrounded)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void AnimationEnd(string animation)
     {
         OnAnimationEndEvent?.Invoke(animation);

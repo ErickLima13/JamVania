@@ -1,21 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
     [SerializeField] private int damage;
 
-    public void SetDamage(int d)
+    [SerializeField] private bool isPlayer;
+
+    public void SetDamage(int value)
     {
-        damage = d;
+        damage = value;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out Status enemy))
+        if (collision.TryGetComponent(out Status target))
         {
-            enemy.HealthChange(damage);
+            switch (target.statusTag)
+            {
+                case StatusTag.Enemy:
+                    if (isPlayer)
+                    {
+                        target.HealthChange(damage);
+                    }
+                    break;
+                case StatusTag.Player:
+                    if (!isPlayer)
+                    {
+                        target.HealthChange(damage);
+                    }
+                    break;
+            }
         }
     }
 

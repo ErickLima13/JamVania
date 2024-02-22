@@ -18,6 +18,7 @@ public class PlayerGroundedState : PlayerState
         base.Enter();
 
         playerData.canDash = true;
+        playerData.canDoubleJump = true;
     }
 
     public override void Exit()

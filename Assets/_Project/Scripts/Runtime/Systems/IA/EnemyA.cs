@@ -6,60 +6,45 @@ public class EnemyA : MonoBehaviour
     public enum State
     {
         Patrol,
-        Idle
+        Idle,
+        Attack
     }
 
-    public State currentState;
-
-    public float speed;
-    public float timerPatrol;
-
-    public float distance;
-    public float distanceAttack;
-
-    public float direction;
-
-    public bool isWalk;
-    public bool isRight;
-    public bool isAttack;
-
-    public LayerMask playerLayer;
-
-    public Transform target;
-    public Transform groundCheck;
-
-    public Transform viewPos;
+    private bool isLeft;
+    private bool isAttack;
 
     private Animator animator;
 
-    public float walkTime;
+    private HitBox hitBox;
+
+    private float direction;
+    private float walkTime;
+    private float speed;
+
+    [SerializeField] private State currentState;
+
+    [SerializeField] private EnemyData enemyData;
+
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform viewPos;
+
+    [SerializeField] private LayerMask playerLayer;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        hitBox = GetComponentInChildren<HitBox>();
     }
 
     private void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(viewPos.position, Vector2.right * direction, distanceAttack, playerLayer);
-        Debug.DrawRay(viewPos.position, Vector2.right * direction * distanceAttack, Color.yellow);
-
-        if (hit.collider)
-        {
-            print(hit.collider.name);
-            target = hit.collider.transform;
-        }
-        else
-        {
-            target = null;
-        }
-
-
         ControlIA();
     }
 
     private void ControlIA()
     {
+        FindPlayer();
+
         switch (currentState)
         {
             case State.Patrol:
@@ -68,37 +53,42 @@ public class EnemyA : MonoBehaviour
             case State.Idle:
                 Idle();
                 break;
+            case State.Attack:
+                Attack();
+                break;
         }
     }
 
     private void Patrol()
     {
+        speed = enemyData.speed;
+
         animator.SetBool("walk", true);
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, distance);
-        Debug.DrawRay(groundCheck.position, Vector2.down * distance, Color.red);
+        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, enemyData.distance);
+        Debug.DrawRay(groundCheck.position, Vector2.down * enemyData.distance, Color.red);
 
         if (!ground.collider)
         {
-            if (isRight)
+            if (isLeft)
             {
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                isRight = false;
+                isLeft = false;
                 direction = 1f;
             }
             else
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
-                isRight = true;
+                isLeft = true;
                 direction = -1f;
             }
         }
 
         walkTime += Time.deltaTime;
 
-        if (walkTime > timerPatrol)
+        if (walkTime > enemyData.timerPatrol)
         {
             float rand = Random.Range(0, 50);
             if (rand < 25)
@@ -107,9 +97,6 @@ public class EnemyA : MonoBehaviour
                 walkTime = 0;
             }
         }
-
-
-
     }
 
     private void Idle()
@@ -117,14 +104,51 @@ public class EnemyA : MonoBehaviour
         StartCoroutine(PatrolSystem());
     }
 
+    private void Attack()
+    {
+        hitBox.SetDamage(enemyData.damage);
+
+        if (!isAttack)
+        {
+            StartCoroutine(AttackDelay());
+        }
+    }
+
+    private void FindPlayer()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(viewPos.position, Vector2.right * direction, enemyData.distanceAttack, playerLayer);
+        Debug.DrawRay(viewPos.position, Vector2.right * direction * enemyData.distanceAttack, Color.yellow);
+
+        if (hit.collider)
+        {
+            speed = 0;
+            ChangeState(State.Attack);
+        }
+        else
+        {
+            ChangeState(State.Patrol);
+        }
+    }
+
     private IEnumerator PatrolSystem()
     {
         ChangeState(State.Idle);
         animator.SetBool("walk", false);
 
-        yield return new WaitForSeconds(timerPatrol);
+        yield return new WaitForSeconds(enemyData.timerPatrol);
 
         ChangeState(State.Patrol);
+    }
+
+    private IEnumerator AttackDelay()
+    {
+        isAttack = true;
+        animator.SetBool("walk", false);
+        animator.SetTrigger("attack");
+
+        yield return new WaitForSeconds(enemyData.attackTime);
+
+        isAttack = false;
     }
 
     private void ChangeState(State newState)

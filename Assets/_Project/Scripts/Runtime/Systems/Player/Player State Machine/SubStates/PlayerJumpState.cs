@@ -16,6 +16,9 @@ public class PlayerJumpState : PlayerAirState
     public override void Enter()
     {
         base.Enter();
+
+        
+
         Jump();
 
     }
@@ -28,6 +31,12 @@ public class PlayerJumpState : PlayerAirState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (player.TryDoubleJump())
+        {
+            playerData.canDoubleJump = false;
+            stateMachine.ChangeState(this);
+        }
 
         if (player.TryDash())
         {

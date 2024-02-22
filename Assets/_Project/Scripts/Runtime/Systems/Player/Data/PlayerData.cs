@@ -13,6 +13,7 @@ public class PlayerData : ScriptableObject
     public int damage = 1;
 
     public bool canDash;
+    public bool canDoubleJump;
 
 
     [Header("Power Ups")]

@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64a67a80577adf4592b3686409c16c0, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: fd8a8eb5d0b111945ba663e3c35718c3, type: 3}
+  m_Name: EnemyA
   m_EditorClassIdentifier: 
-  speed: 0.8
-  jumpForce: 3
-  dashTimer: 0.25
-  dashForce: 2.2
-  gravityScale: 1
-  damage: 2
-  canDash: 1
-  canDoubleJump: 1
-  dashEnable: 1
-  doubleJumpEnable: 1
+  speed: 0.5
+  timerPatrol: 2
+  distance: 0.1
+  distanceAttack: 0.1
+  attackTime: 1
+  damage: 1
