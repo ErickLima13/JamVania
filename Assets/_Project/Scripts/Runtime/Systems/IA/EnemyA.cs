@@ -41,21 +41,19 @@ public class EnemyA : MonoBehaviour
 
     private void Update()
     {
-
-        RaycastHit2D hit = Physics2D.Raycast(viewPos.position, Vector2.right * direction, distanceAttack,playerLayer);
+        RaycastHit2D hit = Physics2D.Raycast(viewPos.position, Vector2.right * direction, distanceAttack, playerLayer);
         Debug.DrawRay(viewPos.position, Vector2.right * direction * distanceAttack, Color.yellow);
 
         if (hit.collider)
         {
             print(hit.collider.name);
             target = hit.collider.transform;
-
         }
         else
         {
             target = null;
         }
-       
+
 
         ControlIA();
     }
@@ -94,8 +92,8 @@ public class EnemyA : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 isRight = true;
-                direction = -1f;   
-            }      
+                direction = -1f;
+            }
         }
 
         walkTime += Time.deltaTime;
@@ -110,15 +108,13 @@ public class EnemyA : MonoBehaviour
             }
         }
 
-       
+
 
     }
 
     private void Idle()
     {
-     
-            StartCoroutine(PatrolSystem());
- 
+        StartCoroutine(PatrolSystem());
     }
 
     private IEnumerator PatrolSystem()

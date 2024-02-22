@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,15 +66,7 @@ public class PlayerController : MonoBehaviour
 
         playerRb.velocity = new Vector2(inputX * speed, playerRb.velocity.y);
 
-        if (isLeft && inputX > 0)
-        {
-            Flip();
-        }
-
-        if (!isLeft && inputX < 0)
-        {
-            Flip();
-        }
+      
     }
 
     private void Jump()
