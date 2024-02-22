@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public event Action<string> OnAnimationEndEvent; 
+    public event Action<string> OnAnimationEndEvent;
 
     #region State machine
     public PlayerStateMachine StateMachine
@@ -27,6 +27,11 @@ public class Player : MonoBehaviour
     }
 
     public PlayerMainAttackState MainAttackState
+    {
+        get; private set;
+    }
+
+    public PlayerDashState DashState
     {
         get; private set;
     }
@@ -71,6 +76,7 @@ public class Player : MonoBehaviour
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "jump");
         MainAttackState = new PlayerMainAttackState(this, StateMachine, playerData, "attack2");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
     }
 
     private void Start()
@@ -99,9 +105,19 @@ public class Player : MonoBehaviour
         return isGrounded;
     }
 
+    public bool TryDash()
+    {
+        if (InputControl.Dash_Input_Pressed && playerData.canDash && playerData.dashEnable)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     public void AnimationEnd(string animation)
     {
-        OnAnimationEndEvent?.Invoke(animation);     
+        OnAnimationEndEvent?.Invoke(animation);
     }
 
     private void OnDestroy()

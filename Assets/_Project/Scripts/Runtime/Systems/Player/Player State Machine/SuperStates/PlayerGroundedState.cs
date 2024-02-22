@@ -16,6 +16,8 @@ public class PlayerGroundedState : PlayerState
     public override void Enter()
     {
         base.Enter();
+
+        playerData.canDash = true;
     }
 
     public override void Exit()
@@ -26,6 +28,10 @@ public class PlayerGroundedState : PlayerState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        input = player.InputControl.MoveInput;
+
+        Flip();
 
         if (player.IsGrounded())
         {
@@ -41,9 +47,11 @@ public class PlayerGroundedState : PlayerState
                 return;
             }
 
-            input = player.InputControl.MoveInput;
-
-            Flip();
+            if (player.TryDash())
+            {
+                stateMachine.ChangeState(player.DashState);
+                return;
+            }
         }
 
      

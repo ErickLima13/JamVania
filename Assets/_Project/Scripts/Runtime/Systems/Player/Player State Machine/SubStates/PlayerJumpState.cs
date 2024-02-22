@@ -28,6 +28,12 @@ public class PlayerJumpState : PlayerAirState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
+        if (player.TryDash())
+        {
+            stateMachine.ChangeState(player.DashState);
+            return;
+        }
     }
 
     public override void PhysicsUpdate()

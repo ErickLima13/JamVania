@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.8
   jumpForce: 3
+  dashTimer: 0.25
+  dashForce: 2.2
+  gravityScale: 1
   damage: 2
+  canDash: 1
+  dashEnable: 1
+  doubleJumpEnable: 0
