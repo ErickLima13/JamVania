@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         if (UserInput.Instance.Jump_Input_Pressed && isGrounded)
         {
-            playerRb.AddForce(new(0, jumpForce));
+            playerRb.AddForce(new(0, jumpForce), ForceMode2D.Impulse);
         }
     }
 
