@@ -37,10 +37,15 @@ public class PlayerJumpState : PlayerAirState
             stateMachine.ChangeState(player.DashState);
             return;
         }
+        if (player.InputControl.Jump_Input_Released)
+        {
+            player.PlayerRb.velocity = new Vector2(player.PlayerRb.velocity.x, player.PlayerRb.velocity.y * .1f);
+        }
         if(player.PlayerRb.velocity.y < 0)
         {
             stateMachine.ChangeState(player.FallState);
         }
+
     }
 
     public override void PhysicsUpdate()

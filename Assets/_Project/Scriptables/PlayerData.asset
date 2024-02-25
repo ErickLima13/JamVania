@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64a67a80577adf4592b3686409c16c0, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  speed: 0.8
-  jumpForce: 3
-  dashTimer: 0.25
-  dashForce: 2.2
-  gravityScale: 1
+  speed: 4
+  jumpForce: 11
+  dashTimer: 0.35
+  dashForce: 8
+  gravityScale: 2.5
+  maxFallSpeed: -10
   damage: 2
   canDash: 1
   canDoubleJump: 1

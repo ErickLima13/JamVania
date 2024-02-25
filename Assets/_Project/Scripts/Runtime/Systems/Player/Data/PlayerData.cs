@@ -10,6 +10,7 @@ public class PlayerData : ScriptableObject
     public float dashTimer = 2;
     public float dashForce = 1.6f;
     public float gravityScale = 1;
+    public float maxFallSpeed = -6;
     public int damage = 1;
 
     public bool canDash;
