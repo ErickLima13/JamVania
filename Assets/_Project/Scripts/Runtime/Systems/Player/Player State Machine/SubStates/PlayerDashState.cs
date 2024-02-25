@@ -29,7 +29,7 @@ public class PlayerDashState : PlayerState
     public override void Exit()
     {
         base.Exit();
-
+        player.PlayerRb.velocity = Vector2.zero;
         player.PlayerRb.gravityScale = playerData.gravityScale;
     }
 
@@ -41,7 +41,15 @@ public class PlayerDashState : PlayerState
 
         if (timer < 0)
         {
-            stateMachine.ChangeState(player.IdleState);
+            if (player.IsGrounded())
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
+            else
+            {
+                stateMachine.ChangeState(player.FallState);
+            }
+            
         }
     }
 

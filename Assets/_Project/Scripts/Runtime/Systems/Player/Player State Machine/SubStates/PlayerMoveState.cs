@@ -30,7 +30,7 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(player.IdleState);
         }
 
-        player.PlayerRb.velocity = new Vector2(input.x * playerData.speed, player.PlayerRb.velocity.y);
+        
     }
 
     public override void PhysicsUpdate()

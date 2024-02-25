@@ -32,16 +32,14 @@ public class PlayerJumpState : PlayerAirState
     {
         base.LogicUpdate();
 
-        if (player.TryDoubleJump())
-        {
-            playerData.canDoubleJump = false;
-            stateMachine.ChangeState(this);
-        }
-
         if (player.TryDash())
         {
             stateMachine.ChangeState(player.DashState);
             return;
+        }
+        if(player.PlayerRb.velocity.y < 0)
+        {
+            stateMachine.ChangeState(player.FallState);
         }
     }
 
@@ -52,6 +50,6 @@ public class PlayerJumpState : PlayerAirState
 
     private void Jump()
     {
-        player.PlayerRb.AddForce(new(0, playerData.jumpForce), ForceMode2D.Impulse);
+        player.PlayerRb.velocity = new Vector2(player.PlayerRb.velocity.x, playerData.jumpForce);
     }
 }

@@ -26,7 +26,7 @@ public class PlayerMainAttackState : PlayerAttackState
     public override void Enter()
     {
         base.Enter();
-
+        canFlip = false;
         player.HitBox.SetDamage(playerData.damage);
     }
 

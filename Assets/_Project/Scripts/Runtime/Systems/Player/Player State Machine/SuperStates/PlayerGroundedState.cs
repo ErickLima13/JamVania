@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerGroundedState : PlayerState
 {
-    protected Vector2 input;
+    
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animName) : base(player, stateMachine, playerData, animName)
     {
@@ -30,9 +30,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.LogicUpdate();
 
-        input = player.InputControl.MoveInput;
-
-        Flip();
+        player.PlayerRb.velocity = new Vector2(input.x * playerData.speed, player.PlayerRb.velocity.y);
 
         if (player.IsGrounded())
         {
@@ -63,20 +61,5 @@ public class PlayerGroundedState : PlayerState
         base.PhysicsUpdate();
     }
 
-    private void Flip()
-    {
-        float scalex = player.transform.localScale.x;
-
-        if (input.x > 0)
-        {
-            scalex = 1;
-        }
-        if (input.x < 0)
-        {
-            scalex = -1;
-        }
-
-        player.transform.localScale = new(scalex, player.transform.localScale.y, player.transform.localScale.z);
-
-    }
+    
 }

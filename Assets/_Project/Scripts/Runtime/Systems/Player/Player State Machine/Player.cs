@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState
     {
         get; private set;
+    } 
+    public PlayerFallState FallState
+    {
+        get; private set;
     }
 
     public PlayerMainAttackState MainAttackState
@@ -75,6 +79,7 @@ public class Player : MonoBehaviour
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "jump");
+        FallState = new PlayerFallState(this, StateMachine, playerData, "fall");
         MainAttackState = new PlayerMainAttackState(this, StateMachine, playerData, "attack2");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
     }

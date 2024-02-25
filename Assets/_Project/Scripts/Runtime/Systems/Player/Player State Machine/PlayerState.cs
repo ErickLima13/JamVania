@@ -8,6 +8,9 @@ public class PlayerState
     protected Player player;
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
+    protected Vector2 input;
+
+    protected bool canFlip = true;
 
     protected float startTime;
 
@@ -43,7 +46,11 @@ public class PlayerState
 
     public virtual void LogicUpdate()
     {
-
+        input = player.InputControl.MoveInput;
+        if (canFlip)
+        {
+            Flip();
+        }
     }
 
     public virtual void PhysicsUpdate()
@@ -53,6 +60,22 @@ public class PlayerState
 
     public virtual void DoCheck()
     {
+
+    }
+    public void Flip()
+    {
+        float scalex = player.transform.localScale.x;
+
+        if (input.x > 0)
+        {
+            scalex = 1;
+        }
+        if (input.x < 0)
+        {
+            scalex = -1;
+        }
+
+        player.transform.localScale = new(scalex, player.transform.localScale.y, player.transform.localScale.z);
 
     }
 }

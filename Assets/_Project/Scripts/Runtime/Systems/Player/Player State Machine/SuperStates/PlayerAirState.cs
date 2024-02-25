@@ -37,6 +37,19 @@ public class PlayerAirState : PlayerState
             stateMachine.ChangeState(player.MainAttackState);
             return;
         }
+
+        if (player.TryDoubleJump())
+        {
+            playerData.canDoubleJump = false;
+            stateMachine.ChangeState(player.JumpState);
+            return;
+        }
+        if (player.TryDash())
+        {
+            stateMachine.ChangeState(player.DashState);
+            return;
+        }
+        player.PlayerRb.velocity = new Vector2(input.x * playerData.speed, player.PlayerRb.velocity.y);
     }
 
     public override void PhysicsUpdate()
