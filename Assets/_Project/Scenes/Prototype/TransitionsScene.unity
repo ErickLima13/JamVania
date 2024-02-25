@@ -1340,7 +1340,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.103819, y: 1, z: -10}
+  m_LocalPosition: {x: -1.8888888, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionToCamera: {fileID: 1613215615}
   characterTeleportPoint: {fileID: 977015340}
-  velocityToApplyOnTeleport: {x: 0, y: 4}
+  velocityToApplyOnTeleport: {x: 0, y: 8}
   player: {fileID: 0}
   playerTag: Player
 --- !u!61 &767202789
@@ -1957,11 +1957,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.103819
+      value: 5.8
       objectReference: {fileID: 0}
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6123219
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionToCamera: {fileID: 1613215615}
   characterTeleportPoint: {fileID: 1219392910}
-  velocityToApplyOnTeleport: {x: 0, y: 4}
+  velocityToApplyOnTeleport: {x: 0, y: 8}
   player: {fileID: 0}
   playerTag: Player
 --- !u!61 &957168269
@@ -2543,7 +2543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionToCamera: {fileID: 1613215615}
   characterTeleportPoint: {fileID: 1784075693}
-  velocityToApplyOnTeleport: {x: 0, y: 4}
+  velocityToApplyOnTeleport: {x: 0, y: 8}
   player: {fileID: 0}
   playerTag: Player
 --- !u!61 &1238082221
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionToCamera: {fileID: 323543715}
-  characterTeleportPoint: {fileID: 48157466}
+  characterTeleportPoint: {fileID: 337218723}
   velocityToApplyOnTeleport: {x: 0, y: 0}
   player: {fileID: 0}
   playerTag: Player
@@ -3668,7 +3668,7 @@ Transform:
   m_GameObject: {fileID: 1613215612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.103819, y: -2.6123219, z: -10}
+  m_LocalPosition: {x: 5.8, y: -12, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

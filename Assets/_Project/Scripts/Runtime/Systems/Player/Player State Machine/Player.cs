@@ -10,7 +10,10 @@ public class Player : MonoBehaviour
     {
         get; private set;
     }
-
+    public PlayerTransitionState TransitionState
+    {
+        get; private set;
+    }
     public PlayerIdleState IdleState
     {
         get; private set;
@@ -76,6 +79,7 @@ public class Player : MonoBehaviour
     {
         StateMachine = new();
 
+        TransitionState = new PlayerTransitionState(this, StateMachine, playerData, "idle");
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "jump");
@@ -92,6 +96,8 @@ public class Player : MonoBehaviour
         InputControl = UserInput.Instance;
 
         StateMachine.Initialize(IdleState);
+
+        PlayerRb.gravityScale = playerData.gravityScale;
     }
 
     private void Update()

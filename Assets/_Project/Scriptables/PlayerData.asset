@@ -17,7 +17,7 @@ MonoBehaviour:
   dashTimer: 0.35
   dashForce: 8
   gravityScale: 2.5
-  maxFallSpeed: -10
+  maxFallSpeed: -12
   damage: 2
   canDash: 1
   canDoubleJump: 1
