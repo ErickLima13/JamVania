@@ -7,11 +7,17 @@ using System.Linq;
 public class CameraManager : MonoBehaviour
 {
     public static CameraManager Instance;
-    public List<CinemachineVirtualCamera> allSceneCameras;
+    public List<CinemachineVirtualCamera> allSceneCameras = new();
     private void Awake()
     {
         Instance = this;
     }
+
+    private void Start()
+    {
+        allSceneCameras = FindObjectsOfType<CinemachineVirtualCamera>().ToList();
+    }
+
     public void EnableCamera(CinemachineVirtualCamera newCamera)
     {
         List<CinemachineVirtualCamera> allCamerasClones = allSceneCameras.ToList();
