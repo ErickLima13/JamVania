@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: d4c2e78279631a84fbbee6c2fc758f33, type: 2}
   groundCheck: {fileID: 1284771276850407920}
-  boxSize: {x: 0.7, y: 0.01}
+  boxSize: {x: 1, y: 0.01}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
