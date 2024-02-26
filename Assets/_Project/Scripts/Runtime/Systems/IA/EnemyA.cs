@@ -17,7 +17,7 @@ public class EnemyA : MonoBehaviour
 
     private HitBox hitBox;
 
-    private float direction;
+    private float direction = 1;
     private float walkTime;
     private float speed;
 
@@ -25,10 +25,11 @@ public class EnemyA : MonoBehaviour
 
     [SerializeField] private EnemyData enemyData;
 
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform viewPos;
 
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private LayerMask wallLayer;
 
     private void Start()
     {
@@ -67,22 +68,22 @@ public class EnemyA : MonoBehaviour
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-        RaycastHit2D ground = Physics2D.Raycast(groundCheck.position, Vector2.down, enemyData.distance);
-        Debug.DrawRay(groundCheck.position, Vector2.down * enemyData.distance, Color.red);
+        RaycastHit2D wall = Physics2D.Raycast(wallCheck.position, Vector2.right * direction, enemyData.distance,wallLayer);
+        Debug.DrawRay(wallCheck.position, Vector2.right * direction * enemyData.distance, Color.red);
 
-        if (!ground.collider)
+        if (wall.collider)
         {
             if (isLeft)
             {
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                transform.eulerAngles = new Vector3(0, 180, 0);
                 isLeft = false;
-                direction = 1f;
+                direction = -1f;
             }
             else
             {
-                transform.eulerAngles = new Vector3(0, 180, 0);
+                transform.eulerAngles = new Vector3(0, 0, 0);
                 isLeft = true;
-                direction = -1f;
+                direction = 1f;
             }
         }
 

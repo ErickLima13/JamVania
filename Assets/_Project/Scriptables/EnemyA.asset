@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8a8eb5d0b111945ba663e3c35718c3, type: 3}
   m_Name: EnemyA
   m_EditorClassIdentifier: 
-  speed: 0.5
+  speed: 1
   timerPatrol: 2
-  distance: 0.1
-  distanceAttack: 0.1
+  distance: 0.5
+  distanceAttack: 0.6
   attackTime: 1
   damage: 1
