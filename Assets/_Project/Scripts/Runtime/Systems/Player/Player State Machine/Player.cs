@@ -102,13 +102,13 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        isGrounded = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, groundMask);
         StateMachine.CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
-        StateMachine.CurrentState.PhysicsUpdate();
-        isGrounded = Physics2D.OverlapBox(groundCheck.position, boxSize, 0, groundMask);
+        StateMachine.CurrentState.PhysicsUpdate();   
     }
 
     public bool IsGrounded()

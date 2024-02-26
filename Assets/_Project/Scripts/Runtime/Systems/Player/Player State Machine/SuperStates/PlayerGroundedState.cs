@@ -36,6 +36,7 @@ public class PlayerGroundedState : PlayerState
         {
             if (player.InputControl.Jump_Input_Pressed)
             {
+                Debug.Log("Jump Used");
                 stateMachine.ChangeState(player.JumpState);
                 return;
             }
