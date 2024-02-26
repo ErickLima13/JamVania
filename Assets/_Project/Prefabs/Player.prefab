@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6746229189393235407}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 36ec23891a929cf4d99610821fe51687, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2896c6124bd74c43adfc450d8ac45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statusTag: 0
+  statusTag: 1
   hitPrefab: {fileID: 0}
   maxLife: 55
 --- !u!61 &6746229189393235407

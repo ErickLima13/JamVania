@@ -33,7 +33,7 @@ public class RoomTransitionCollider : MonoBehaviour
     public void FinishTeleport()
     {
         TransitionManager.Instance().onTransitionCutPointReached -= FinishTeleport;
-        CameraManager.Instance.EnableCamera(transitionToCamera);
+        //CameraManager.Instance.EnableCamera(transitionToCamera);
         player.transform.position = characterTeleportPoint.position;
     }
     public void ReleasePlayer()
