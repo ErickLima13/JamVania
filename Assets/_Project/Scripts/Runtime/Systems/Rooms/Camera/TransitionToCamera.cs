@@ -9,8 +9,14 @@ public class TransitionToCamera : MonoBehaviour
 
     [SerializeField] private bool isBigRoom;
 
+    [SerializeField] private int idInMap;
+
+    private MiniMapController miniMapController;
+
     private void Start()
     {
+        miniMapController = FindObjectOfType<MiniMapController>();
+
         if (isBigRoom)
         {
             Player player = FindObjectOfType<Player>();
@@ -23,8 +29,8 @@ public class TransitionToCamera : MonoBehaviour
     {
         if (collision.TryGetComponent(out Player player))
         {
-            print("chamei");
             CameraManager.Instance.EnableCamera(newCam);
+            miniMapController.EnterRoom(idInMap);
         }
     }
 }
