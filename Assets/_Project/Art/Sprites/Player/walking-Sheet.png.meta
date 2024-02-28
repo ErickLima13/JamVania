@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 662d9f7f933f7bf42a349cbe9e92e8f0
+guid: 5b570541e9a3b3d448281a26980db878
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle-Sheet_0
+      name: walking-Sheet_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 20
+        x: 25
+        y: 23
         width: 21
-        height: 21
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 330aec04bf5d1cf41b7966e0bc84768d
-      internalID: -1886562398
+      spriteID: 884538761d84dd441be12e13406ab2c2
+      internalID: -379588928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle-Sheet_1
+      name: walking-Sheet_1
       rect:
         serializedVersion: 2
         x: 90
-        y: 20
+        y: 26
         width: 21
-        height: 22
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b0702b69c15a44468aa060297c9b82a
-      internalID: -116431605
+      spriteID: 26420e7a1fa0a3f49ac20a1aa4c9b54f
+      internalID: -278153436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle-Sheet_2
+      name: walking-Sheet_2
       rect:
         serializedVersion: 2
-        x: 154
-        y: 20
+        x: 153
+        y: 25
         width: 21
-        height: 22
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c9c6da816c4be34f99fd286c61f429e
-      internalID: 849137835
+      spriteID: 9f3f184cafe7b4a4ab62d49b6211d7a3
+      internalID: 172424691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle-Sheet_3
+      name: walking-Sheet_3
       rect:
         serializedVersion: 2
-        x: 218
-        y: 20
+        x: 217
+        y: 23
         width: 21
-        height: 22
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 106f08f112f4a7543900b4e4915086ed
-      internalID: 1278115834
+      spriteID: 04996d2b5e11556449bd581539b02d39
+      internalID: -1336908830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 26
+        width: 20
+        height: 19
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6581b94e2bef2fd428410e635ca06cf9
+      internalID: -59176541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 25
+        width: 21
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa83779015ed2034f9b01f6896d98926
+      internalID: -1894205247
       vertices: []
       indices: 
       edges: []
@@ -217,10 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle-Sheet_0: -1886562398
-      idle-Sheet_1: -116431605
-      idle-Sheet_2: 849137835
-      idle-Sheet_3: 1278115834
+      walking-Sheet_0: -379588928
+      walking-Sheet_1: -278153436
+      walking-Sheet_2: 172424691
+      walking-Sheet_3: -1336908830
+      walking-Sheet_4: -59176541
+      walking-Sheet_5: -1894205247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cfa0db99ae2ebaf4ea5a2b9861761611
+guid: e3ef2940ea2d13f4782926e6e9cb5ac3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walking-Sheet_0
+      name: jump_and_fall_animation-Sheet_0
       rect:
         serializedVersion: 2
         x: 25
-        y: 23
+        y: 22
         width: 21
-        height: 20
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,18 +137,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e85d8f301072f846aad2c920eeebe60
-      internalID: 636163838
+      spriteID: f788980610e0f0e449c42a6c486ccdab
+      internalID: -655984702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking-Sheet_1
+      name: jump_and_fall_animation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 90
-        y: 26
+        x: 89
+        y: 22
         width: 21
         height: 19
       alignment: 7
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0417bea5da0520e46aa87ee301e99445
-      internalID: 1613187059
+      spriteID: 02547115724034447a41aaccc03d7c36
+      internalID: -1334626624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking-Sheet_2
+      name: jump_and_fall_animation-Sheet_2
       rect:
         serializedVersion: 2
         x: 153
         y: 25
-        width: 21
-        height: 20
+        width: 20
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b113775087d15844b9ea72a933f75fd6
-      internalID: -33355565
+      spriteID: 26f6eab5f8b6b284685b4cd13105f1fa
+      internalID: 168127000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking-Sheet_3
+      name: jump_and_fall_animation-Sheet_3
       rect:
         serializedVersion: 2
         x: 217
-        y: 23
-        width: 21
-        height: 20
+        y: 28
+        width: 17
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb9c78923a29480429328ab71606add3
-      internalID: -2070483641
+      spriteID: 07d549574a69a474485d9db0d6ae2ab8
+      internalID: 1466561261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking-Sheet_4
+      name: jump_and_fall_animation-Sheet_4
       rect:
         serializedVersion: 2
-        x: 280
-        y: 26
-        width: 20
-        height: 19
+        x: 281
+        y: 25
+        width: 17
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,18 +221,60 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973e2257c1103fc4a95be700eb74d422
-      internalID: 716206925
+      spriteID: 93feddb074c29a14793bc0eb9feb8d36
+      internalID: -647282896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walking-Sheet_5
+      name: jump_and_fall_animation-Sheet_5
       rect:
         serializedVersion: 2
         x: 345
-        y: 25
+        y: 24
+        width: 17
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 692604b1ea7011a4ea7123c7211bdfe3
+      internalID: -1004661420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_and_fall_animation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 22
+        width: 21
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf28bc668cf33440a8e79404dfd6e65
+      internalID: -461119131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jump_and_fall_animation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 22
         width: 21
         height: 20
       alignment: 7
@@ -242,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0f00caef37b9854b8567d47c2ad671d
-      internalID: 457550282
+      spriteID: b11d837273cfa7f4a889ccb273cb4fc9
+      internalID: 2004389741
       vertices: []
       indices: 
       edges: []
@@ -259,12 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      walking-Sheet_0: 636163838
-      walking-Sheet_1: 1613187059
-      walking-Sheet_2: -33355565
-      walking-Sheet_3: -2070483641
-      walking-Sheet_4: 716206925
-      walking-Sheet_5: 457550282
+      jump_and_fall_animation-Sheet_0: -655984702
+      jump_and_fall_animation-Sheet_1: -1334626624
+      jump_and_fall_animation-Sheet_2: 168127000
+      jump_and_fall_animation-Sheet_3: 1466561261
+      jump_and_fall_animation-Sheet_4: -647282896
+      jump_and_fall_animation-Sheet_5: -1004661420
+      jump_and_fall_animation-Sheet_6: -461119131
+      jump_and_fall_animation-Sheet_7: 2004389741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
