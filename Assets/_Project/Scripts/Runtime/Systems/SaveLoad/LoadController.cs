@@ -22,7 +22,7 @@ public class LoadController : MonoBehaviour
         }
     }
 
-    private void LoadGame(int id)
+    public void LoadGame(int id)
     {
         player.transform.position = savePos[id].transform.position + Vector3.right;
 
