@@ -607,14 +607,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1679715577}
     m_Modifications:
+    - target: {fileID: 1375497632828986147, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2183456365835462365, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPoint
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2222213816903588915, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 912872398}
+      objectReference: {fileID: 0}
     - target: {fileID: 2222213816903588915, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 912872397}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712569780920322892, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3166100401159507733, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.1
@@ -655,6 +667,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4109870909437242112, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302706169431591839, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6561839500931393623, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -668,39 +688,22 @@ PrefabInstance:
       value: Room 3
       objectReference: {fileID: 0}
     - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPortal
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 1765237557}
+      objectReference: {fileID: 0}
     - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 1765237559}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
---- !u!4 &436658000 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3592618462965968876, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 436657999}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &436658001 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7873910140349945378, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 436657999}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &436658002 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5864219514983810055, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 436657999}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &436658003 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3166100401159507733, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
@@ -714,7 +717,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1679715577}
     m_Modifications:
+    - target: {fileID: 2183456365835462365, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPoint
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2189339625677179277, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208438766058590254, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -767,16 +778,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPortal
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 912872398}
+      objectReference: {fileID: 0}
     - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 912872396}
+      objectReference: {fileID: 0}
     - target: {fileID: 6561839500931393623, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7083993223780766272, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPoint
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7233797829439702942, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: idInMap
@@ -786,40 +805,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7625896489785583738, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPortal
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 1765237557}
+      objectReference: {fileID: 0}
     - target: {fileID: 8544638509295192720, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 1588106745}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
---- !u!4 &441642716 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7873910140349945378, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 441642715}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &441642717 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6864671312749790715, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 441642715}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &441642718 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5864219514983810055, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 441642715}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &441642719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3166100401159507733, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
@@ -962,6 +968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestMap
       objectReference: {fileID: 0}
+    - target: {fileID: 8510472921434768545, guid: 2b9c089b96b9fb241b29be7bdbc5e640, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -978,6 +988,10 @@ PrefabInstance:
     - target: {fileID: 4187280536990626166, guid: 3b96dbf737c2c3947a6a0008c1eee043, type: 3}
       propertyPath: m_Name
       value: WaterMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187280536990626166, guid: 3b96dbf737c2c3947a6a0008c1eee043, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8678439687491711491, guid: 3b96dbf737c2c3947a6a0008c1eee043, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1362,11 +1376,11 @@ PrefabInstance:
     - target: {fileID: 1653792686351197777, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 436658002}
+      objectReference: {fileID: 0}
     - target: {fileID: 1653792686351197777, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 436658001}
+      objectReference: {fileID: 0}
     - target: {fileID: 2057053264743360734, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.59
@@ -1375,17 +1389,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -16.14
       objectReference: {fileID: 0}
+    - target: {fileID: 2884714766280702922, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3304543781784526458, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 441642718}
+      objectReference: {fileID: 0}
     - target: {fileID: 3304543781784526458, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 441642716}
+      objectReference: {fileID: 0}
     - target: {fileID: 3544316741690989278, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_Name
       value: BigRoom 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3544316741690989278, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4157195671423518701, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_Name
@@ -1437,15 +1459,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5209744034558860060, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7
+      value: -6.74
       objectReference: {fileID: 0}
     - target: {fileID: 5209744034558860060, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.4
+      value: -8.97
       objectReference: {fileID: 0}
     - target: {fileID: 6196794661598983081, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383100918876640964, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7359240269782588348, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPoint
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7652361994841577756, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1612,11 +1642,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.51
+      value: 15.52
       objectReference: {fileID: 0}
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.12
+      value: -14.55
       objectReference: {fileID: 0}
     - target: {fileID: 1284771276850407920, guid: 2be3bd233219d2f43a3b373291ae4799, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1679,14 +1709,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1679715577}
     m_Modifications:
+    - target: {fileID: 2189339625677179277, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208438766058590254, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2222213816903588915, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPortal
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2222213816903588915, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 441642718}
+      objectReference: {fileID: 0}
     - target: {fileID: 2222213816903588915, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 441642717}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712569780920322892, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3166100401159507733, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1727,14 +1773,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4109870909437242112, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPoint
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302706169431591839, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+      propertyPath: idPortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 436658002}
+      objectReference: {fileID: 0}
     - target: {fileID: 6299501291404607086, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 436658000}
+      objectReference: {fileID: 0}
     - target: {fileID: 7233797829439702942, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
       propertyPath: idInMap
       value: 1
@@ -1748,11 +1806,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
---- !u!4 &912872396 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3592618462965968876, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
-  m_PrefabInstance: {fileID: 912872395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &912872397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6864671312749790715, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
@@ -2763,11 +2816,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
---- !u!4 &1588106745 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6337747683031694768, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
-  m_PrefabInstance: {fileID: 1765237555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1591469909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,6 +2968,10 @@ PrefabInstance:
     - target: {fileID: 8719739998454251705, guid: 0f9820de4124bb54c9331c5f1f5780b1, type: 3}
       propertyPath: m_Name
       value: FireMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719739998454251705, guid: 0f9820de4124bb54c9331c5f1f5780b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3085,6 +3137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679715577}
+  - component: {fileID: 1679715578}
   m_Layer: 0
   m_Name: 'Rooms '
   m_TagString: Untagged
@@ -3112,6 +3165,20 @@ Transform:
   - {fileID: 460428143}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1679715578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679715576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e88a699f26d5d4d93da2d4376b3e46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
+  portals: []
 --- !u!1 &1693323915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,13 +3303,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1653792686351197777, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPortal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653792686351197777, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 436658002}
+      objectReference: {fileID: 0}
     - target: {fileID: 1653792686351197777, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 436658001}
+      objectReference: {fileID: 0}
     - target: {fileID: 2057053264743360734, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.59
@@ -3251,21 +3322,45 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -16.14
       objectReference: {fileID: 0}
+    - target: {fileID: 2412353605835062163, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPoint
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884714766280702922, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_Name
+      value: RightEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020908533375919361, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304543781784526458, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPortal
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3304543781784526458, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: transitionToCamera
       value: 
-      objectReference: {fileID: 441642718}
+      objectReference: {fileID: 0}
     - target: {fileID: 3304543781784526458, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: characterTeleportPoint
       value: 
-      objectReference: {fileID: 441642716}
+      objectReference: {fileID: 0}
     - target: {fileID: 3544316741690989278, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_Name
       value: BigRoom 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3544316741690989278, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4157195671423518701, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_Name
       value: TeleportDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157195671423518701, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5046926991212436010, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3275,6 +3370,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -16.07
       objectReference: {fileID: 0}
+    - target: {fileID: 6383100918876640964, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: m_Name
+      value: LeftEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273922223996646896, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPortal
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8273922223996646896, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
       propertyPath: transitionToCamera
       value: 
@@ -3283,6 +3386,10 @@ PrefabInstance:
       propertyPath: characterTeleportPoint
       value: 
       objectReference: {fileID: 766159297}
+    - target: {fileID: 8431133345569566399, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
+      propertyPath: idPoint
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3291,22 +3398,6 @@ PrefabInstance:
 --- !u!4 &1765237556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1383123107025086326, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
-  m_PrefabInstance: {fileID: 1765237555}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1765237557 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7660591273217207471, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
-  m_PrefabInstance: {fileID: 1765237555}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1765237559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 861849100091852010, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
   m_PrefabInstance: {fileID: 1765237555}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849734222

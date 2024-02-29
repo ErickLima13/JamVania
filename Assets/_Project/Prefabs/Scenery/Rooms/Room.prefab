@@ -43,6 +43,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6864671312749790715}
+  - component: {fileID: 7083993223780766272}
   m_Layer: 0
   m_Name: RightEntrance
   m_TagString: Untagged
@@ -65,6 +66,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3024424719585047248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7083993223780766272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375497632828986147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee8855c51676d24e973f07ee4e0069a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idPoint: 0
+  myCam: {fileID: 5864219514983810055}
 --- !u!1 &2189339625677179277
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +175,7 @@ MonoBehaviour:
   characterTeleportPoint: {fileID: 0}
   velocityToApplyOnTeleport: {x: 0, y: 0}
   player: {fileID: 0}
+  idPortal: 0
   playerTag: Player
 --- !u!50 &5164184997643610310
 Rigidbody2D:
@@ -197,6 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3592618462965968876}
+  - component: {fileID: 4109870909437242112}
   m_Layer: 0
   m_Name: LeftEntrance
   m_TagString: Untagged
@@ -219,6 +236,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3024424719585047248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4109870909437242112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208438766058590254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee8855c51676d24e973f07ee4e0069a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idPoint: 0
+  myCam: {fileID: 5864219514983810055}
 --- !u!1 &2712569780920322892
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +345,7 @@ MonoBehaviour:
   characterTeleportPoint: {fileID: 0}
   velocityToApplyOnTeleport: {x: 0, y: 8}
   player: {fileID: 0}
+  idPortal: 0
   playerTag: Player
 --- !u!50 &3936094833558627859
 Rigidbody2D:
@@ -385,6 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7873910140349945378}
+  - component: {fileID: 2183456365835462365}
   m_Layer: 0
   m_Name: TopEntrance
   m_TagString: Untagged
@@ -407,6 +440,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3024424719585047248}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2183456365835462365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302706169431591839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee8855c51676d24e973f07ee4e0069a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idPoint: 0
+  myCam: {fileID: 5864219514983810055}
 --- !u!1 &6444218164631830336
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +639,7 @@ MonoBehaviour:
   characterTeleportPoint: {fileID: 0}
   velocityToApplyOnTeleport: {x: 0, y: 0}
   player: {fileID: 0}
+  idPortal: 0
   playerTag: Player
 --- !u!50 &5857801409480961787
 Rigidbody2D:
@@ -908,6 +956,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newCam: {fileID: 5864219514983810055}
+  isBigRoom: 0
+  idInMap: 0
 --- !u!1 &8283904475709425673
 GameObject:
   m_ObjectHideFlags: 0

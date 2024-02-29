@@ -10,6 +10,8 @@ public class RoomTransitionCollider : MonoBehaviour
     public Transform characterTeleportPoint;
     public Vector2 velocityToApplyOnTeleport;
     public Transform player;
+
+    public int idPortal;
     
     public string playerTag;
     private void OnTriggerEnter2D(Collider2D collision)
