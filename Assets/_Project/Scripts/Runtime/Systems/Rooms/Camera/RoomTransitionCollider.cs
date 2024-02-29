@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EasyTransition;
 using Cinemachine;
+using EasyTransition;
+using System;
+using UnityEngine;
 
 public class RoomTransitionCollider : MonoBehaviour
 {
+    public event Action<int> OnMapTransition;
+
     public CinemachineVirtualCamera transitionToCamera;
     public Transform characterTeleportPoint;
     public Vector2 velocityToApplyOnTeleport;
     public Transform player;
 
     public int idPortal;
-    
+    public int idMap;
+
+    public bool isMapTransition;
+
     public string playerTag;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,6 +41,12 @@ public class RoomTransitionCollider : MonoBehaviour
         TransitionManager.Instance().onTransitionCutPointReached -= FinishTeleport;
         //CameraManager.Instance.EnableCamera(transitionToCamera);
         player.transform.position = characterTeleportPoint.position;
+
+        if (isMapTransition)
+        {
+            print("CHAMAMO");
+            OnMapTransition?.Invoke(idMap);
+        }
     }
     public void ReleasePlayer()
     {
