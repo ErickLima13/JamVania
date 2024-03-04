@@ -2338,16 +2338,21 @@ MonoBehaviour:
   - {fileID: 1263410283}
   - {fileID: 1152214199}
   attackDelay: 0
-  timeToJump: 3
-  timeToDash: 6
+  timeToJump: 4
+  timeToDash: 2
   attackThornDuration: 1
-  direction: 0
+  direction: 1
   wallDistance: 0.5
   speed: 4
   wallCheck: {fileID: 1837059842}
   wallLayer:
     serializedVersion: 2
     m_Bits: 64
+  numBombs: 0
+  bombPrefab: {fileID: 6347527775873441988, guid: 7538ea06304cd8041b0d836fff3ae263, type: 3}
+  canJump: 0
+  canShoot: 0
+  isLeft: 0
 --- !u!212 &1075650245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4206,7 +4211,7 @@ Transform:
   m_GameObject: {fileID: 1837059841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.09, z: 0}
+  m_LocalPosition: {x: 0.1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

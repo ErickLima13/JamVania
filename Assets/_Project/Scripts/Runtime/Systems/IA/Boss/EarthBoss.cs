@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class EarthBoss : MonoBehaviour
 {
+
+    #region old
 
     public enum AttackState
     {
@@ -36,39 +39,51 @@ public class EarthBoss : MonoBehaviour
 
     public LayerMask wallLayer;
 
+    public int numBombs;
+
+    public GameObject bombPrefab;
+
+    public bool canJump;
+    public bool canShoot;
+    public bool isLeft;
+
+    #endregion
+
+    public EarthStateMachine StateMachine
+    {
+        get; private set;
+    }
+
+    public JumpAttackState JumpAttackState
+    {
+        get; private set;
+    }
+
+    [SerializeField] private BossData bossData;
 
 
     private void Start()
     {
         player = FindObjectOfType<Player>().transform;
         initPos = transform.position;
-
         DisableAll();
+
+        JumpAttackState = new(this, StateMachine, bossData, "jump");
+     
     }
 
     private void Update()
     {
-        ControlState();
+        StateMachine.CurrentState.LogicUpdate();
     }
 
-
-    private void ControlState()
+    private void FixedUpdate()
     {
-        switch (currentState)
-        {
-            case AttackState.Jump:
-                JumpAtack();
-                break;
-            case AttackState.Dash:
-                DashAttack();
-                break;
-            case AttackState.Bomb:
-                break;
-
-        }
+        StateMachine.CurrentState.PhysicsUpdate();
     }
 
-    private void JumpAtack()
+
+    public void JumpAtack()
     {
         Flip();
 
@@ -76,30 +91,23 @@ public class EarthBoss : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, initPos, speed * Time.deltaTime);
 
-        if (attackDelay > timeToJump && transform.position == initPos)
+        if (attackDelay > timeToJump && transform.position == initPos && !canJump)
         {
-            float rand = Random.Range(0, 100);
-            print(rand);
-            if (rand < 35)
-            {
-                StartCoroutine(JumpAttack());
-                attackDelay = 0;
-            }
-            else
-            {
-                ChangeState(AttackState.Dash);
-            }
+            canJump = true;
+            attackDelay = 0;
+            StartCoroutine(JumpAttack());
         }
     }
 
-    private void DashAttack()
+    public void DashAttack()
     {
         attackDelay += Time.deltaTime;
 
+
+        direction = isLeft ? -1 : 1;
+
         if (attackDelay > timeToDash)
         {
-            direction = player.localScale.x;
-
             transform.Translate(Vector2.right * speed * Time.deltaTime);
 
             RaycastHit2D wall = Physics2D.Raycast(wallCheck.position, Vector2.right * direction, wallDistance, wallLayer);
@@ -107,25 +115,53 @@ public class EarthBoss : MonoBehaviour
 
             if (wall.collider)
             {
-                ChangeState(AttackState.Jump);
+                ChooseAttack();
             }
-
         }
     }
+
+
+    private void BombAttack()
+    {
+        Flip();
+
+        if (numBombs < 3 && !canShoot)
+        {
+            canShoot = true;
+            StartCoroutine(ShootBomb());
+        }
+        else if(numBombs >= 3)
+        {
+            ChooseAttack();
+        }
+    }
+
+    private IEnumerator ShootBomb()
+    {
+        GameObject temp = Instantiate(bombPrefab, wallCheck.transform.position,wallCheck.transform.rotation);
+        numBombs++;
+
+        yield return new WaitForSeconds(attackThornDuration);
+
+        canShoot = false;
+    }
+
 
     private void Flip()
     {
         if (transform.position.x > player.transform.position.x)
         {
             transform.eulerAngles = new(0, 180, 0);
+            isLeft = true;    
         }
         else
         {
             transform.eulerAngles = Vector3.zero;
+            isLeft = false;
         }
     }
 
-    private IEnumerator JumpAttack()
+    public IEnumerator JumpAttack()
     {
         int idAttack = 0;
 
@@ -146,18 +182,42 @@ public class EarthBoss : MonoBehaviour
         yield return new WaitForSeconds(attackThornDuration);
 
         DisableAll();
-
-        ChangeState(AttackState.Dash);
     }
 
 
     private void ChangeState(AttackState newState)
     {
         attackDelay = 0;
+        numBombs = 0;
 
         if (currentState != newState)
         {
             currentState = newState;
+        }
+    }
+
+    private void ChooseAttack()
+    {
+        float rand = Random.Range(0, 100);
+        print(rand);
+
+        if (rand >= 80)
+        {
+            Debug.LogWarning("JUMP");
+            canJump = false;
+            ChangeState(AttackState.Jump);
+        }
+        else if (rand >= 55)
+        {
+            Debug.LogWarning("DASH");
+
+            Flip();
+            ChangeState(AttackState.Dash);
+        }
+        else
+        {
+            Debug.LogWarning("BOMB");
+            ChangeState(AttackState.Bomb);
         }
     }
 
@@ -168,7 +228,7 @@ public class EarthBoss : MonoBehaviour
             g.SetActive(false);
         }
 
-        activeObj.SetActive(true);  
+        activeObj.SetActive(true);
     }
 
     private void DisableAll()
