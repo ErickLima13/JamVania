@@ -6,5 +6,6 @@ using UnityEngine;
 
 public class BossData : ScriptableObject
 {
-    
+    public float wallDistance;
+    public float speed;
 }
