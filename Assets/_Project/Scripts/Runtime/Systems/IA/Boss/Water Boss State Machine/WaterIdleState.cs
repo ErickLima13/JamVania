@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : EarthState
+public class WaterIdleState : WaterState
 {
-    public List<EarthState> earthStates = new();
+    [SerializeField] private List<WaterState> waterStates = new ();
 
     public int idState;
 
@@ -18,15 +18,7 @@ public class IdleState : EarthState
     public override void Enter()
     {
         base.Enter();
-
         StartCoroutine(IdleDelay());
-    }
-
-    private IEnumerator IdleDelay()
-    {
-        yield return new WaitForSeconds(idleTimer);
-
-        earthBoss.ChangeState(earthStates[idState]);
     }
 
     public override void Exit()
@@ -34,7 +26,7 @@ public class IdleState : EarthState
         base.Exit();
 
         idState++;
-        if (idState >= earthStates.Count)
+        if (idState >= waterStates.Count)
         {
             idState = 0;
         }
@@ -43,5 +35,12 @@ public class IdleState : EarthState
     public override void FixedDo()
     {
         base.FixedDo();
+    }
+
+    private IEnumerator IdleDelay()
+    {
+        yield return new WaitForSeconds(idleTimer);
+
+        waterBoss.ChangeState(waterStates[idState]);
     }
 }

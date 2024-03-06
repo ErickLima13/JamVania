@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 642408868771661061}
   - component: {fileID: 4692101188956228208}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.7830189, g: 0.3931084, b: 0.05540227, a: 1}
+  m_Color: {r: 0.5424528, g: 0.70670056, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  lifeTime: 2
 --- !u!58 &642408868771661061
 CircleCollider2D:
   m_ObjectHideFlags: 0

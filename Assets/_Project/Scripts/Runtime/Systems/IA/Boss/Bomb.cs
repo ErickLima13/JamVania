@@ -6,9 +6,11 @@ public class Bomb : MonoBehaviour
 {
     public float speed;
 
+    public float lifeTime;
+
     private void Start()
     {
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, lifeTime);
     }
 
     void Update()
