@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class WaterThornState : WaterState
 {
+    [SerializeField] private GameObject thornPrefab;
+
+    [SerializeField] private List<Transform> thornPositions = new();
+
+    public int randPos;
+
     public override void Do()
     {
         base.Do();
@@ -12,6 +18,9 @@ public class WaterThornState : WaterState
     public override void Enter()
     {
         base.Enter();
+
+        randPos = Random.Range(0,thornPositions.Count);
+        IceThornAttack();
     }
 
     public override void Exit()
@@ -22,5 +31,12 @@ public class WaterThornState : WaterState
     public override void FixedDo()
     {
         base.FixedDo();
+    }
+
+    private void IceThornAttack()
+    {
+        GameObject temp = Instantiate(thornPrefab, thornPositions[randPos].position,Quaternion.identity);
+
+        waterBoss.ChangeState(waterBoss.idleState);
     }
 }

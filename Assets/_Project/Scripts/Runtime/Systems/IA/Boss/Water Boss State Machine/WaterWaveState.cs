@@ -17,10 +17,9 @@ public class WaterWaveState : WaterState
     public override void Do()
     {
         base.Do();
-        if(canMove)
-        {
-            WaveAttack();
-        }
+
+        WaveAttack();
+
     }
 
     public override void Enter()
@@ -52,26 +51,20 @@ public class WaterWaveState : WaterState
 
             if (wave.transform.position == wavesTarget.transform.position)
             {
-                canMove = false;
-                StartCoroutine(MoveWave());
+                wave.SetActive(false);
+                StartCoroutine(MoveWave());  
             }
         }
     }
 
     private IEnumerator MoveWave()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
 
-        foreach (GameObject wave in waves)
+        if (canMove)
         {
-            if (wave.transform.position == wavesTarget.transform.position)
-            {
-                wave.SetActive(false);
-            }
+            canMove = false;
+            waterBoss.ChangeState(waterBoss.idleState);  
         }
-
-        yield return new WaitUntil(() => !waves[1].activeSelf && !waves[0].activeSelf);
-
-        waterBoss.ChangeState(waterBoss.idleState);
     }
 }

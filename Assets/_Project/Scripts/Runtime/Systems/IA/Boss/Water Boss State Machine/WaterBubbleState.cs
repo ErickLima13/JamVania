@@ -39,8 +39,9 @@ public class WaterBubbleState : WaterState
         yield return new WaitForSeconds(0.5f);
 
         GameObject temp = Instantiate(bubblePrefab, waterBoss.transform.position, waterBoss.transform.rotation);
+        temp.transform.localScale = new(temp.transform.localScale.x * waterBoss.transform.localScale.x, temp.transform.localScale.y);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
         waterBoss.ChangeState(waterBoss.idleState);
     }

@@ -413,6 +413,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2016327330}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &162577512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162577513}
+  m_Layer: 8
+  m_Name: 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &162577513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162577512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7, y: 6.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816431887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &188219655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,9 +1482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterStates:
-  - {fileID: 2016327331}
-  - {fileID: 0}
-  - {fileID: 2016327331}
+  - {fileID: 1429818638}
+  - {fileID: 1352318975}
   idState: 0
   idleTimer: 1
 --- !u!1 &693473051
@@ -1779,6 +1809,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b2dc7336ffe0b428f3cdaf30c0eab2, type: 3}
+--- !u!1 &761944870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 761944871}
+  m_Layer: 8
+  m_Name: 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &761944871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761944870}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.22, y: 6.35, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816431887}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &766159297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5209744034558860060, guid: e5300ca3761e60944ae608aa7026729d, type: 3}
@@ -2968,7 +3029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0aff762694e33f4c83f8537caf9cbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 0}
+  bubblePrefab: {fileID: 6347527775873441988, guid: 81b9964eb2e96f6499da5f7d6e8c3131, type: 3}
 --- !u!1001 &1361957097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3154,7 +3215,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1816431887}
   m_Father: {fileID: 2102299407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1429818638
@@ -3169,6 +3231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54891a4e2fb818747bfa7a8af0c0f4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thornPrefab: {fileID: 1391150690920334979, guid: 5516629e8709ccf458483029dd85da83, type: 3}
+  thornPositions:
+  - {fileID: 162577513}
+  - {fileID: 761944871}
+  - {fileID: 2003788693}
+  randPos: 0
 --- !u!1 &1447062804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,7 +3421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: {fileID: 0}
   waterWave: {fileID: 2016327331}
-  bubbleState: {fileID: 0}
+  bubbleState: {fileID: 1352318975}
   idleState: {fileID: 626194271}
   thornState: {fileID: 1429818638}
   bossData: {fileID: 11400000, guid: d53d34807d498d4479e4650b2f754fd7, type: 2}
@@ -4306,6 +4374,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -3026564331170762152, guid: 223d99789ea6c45488c55ec0dca940d0, type: 3}
   m_PrefabInstance: {fileID: 1361957097}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1816431886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816431887}
+  m_Layer: 8
+  m_Name: ThornPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816431887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816431886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 162577513}
+  - {fileID: 761944871}
+  - {fileID: 2003788693}
+  m_Father: {fileID: 1429818637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849734222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,6 +4589,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2003788692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003788693}
+  m_Layer: 8
+  m_Name: 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2003788693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003788692}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13, y: 6.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816431887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016327329
 GameObject:

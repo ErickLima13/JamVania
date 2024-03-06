@@ -12,6 +12,7 @@ public class WaterState : MonoBehaviour
 
     public virtual void Enter()
     {
+        Debug.LogWarning(gameObject.name);
     }
 
     public virtual void Do()
