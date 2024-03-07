@@ -14,5 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallDistance: 0.5
   speed: 4
-  numBombs: 0
-  canShoot: 0

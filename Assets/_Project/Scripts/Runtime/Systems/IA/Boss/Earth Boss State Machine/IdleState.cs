@@ -10,6 +10,7 @@ public class IdleState : EarthState
 
     public int idleTimer;
 
+
     public override void Do()
     {
         base.Do();

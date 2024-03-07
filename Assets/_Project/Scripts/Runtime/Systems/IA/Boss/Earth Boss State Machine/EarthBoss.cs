@@ -8,16 +8,28 @@ public class EarthBoss : MonoBehaviour
     public DashAttackState dashAttackState;
     public IdleState idleState;
     public BombAttackState bombAttackState;
+    public DeathState deathState;
 
     [SerializeField] private BossData bossData;
 
+    public Animator animator;
+
+    private Status status;
+
+    public bool isDied;
+
     private void Start()
     {
+        status = GetComponent<Status>();
+
         jumpAttackState.Setup(bossData, this);
         dashAttackState.Setup(bossData, this);
         idleState.Setup(bossData, this);
         bombAttackState.Setup(bossData, this);
+        deathState.Setup(bossData, this);
         ChangeState(idleState);
+
+        status.OnDie += DieAnim;
     }
 
     private void Update()
@@ -27,8 +39,21 @@ public class EarthBoss : MonoBehaviour
 
     public void ChangeState(EarthState newState)
     {
-        state?.Exit();
-        state = newState;
-        state.Enter();
+        if(!isDied)
+        {
+            state?.Exit();
+            state = newState;
+            state.Enter();
+        }
+    }
+
+    private void DieAnim()
+    {
+       ChangeState(deathState);
+    }
+
+    private void OnDestroy()
+    {
+        status.OnDie += DieAnim;
     }
 }

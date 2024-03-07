@@ -37,6 +37,14 @@ public class WaterThornState : WaterState
     {
         GameObject temp = Instantiate(thornPrefab, thornPositions[randPos].position,Quaternion.identity);
 
+        StartCoroutine(DelayTime());
+    }
+
+    private IEnumerator DelayTime()
+    {
+        yield return new WaitForSeconds(3f);
+
         waterBoss.ChangeState(waterBoss.idleState);
+
     }
 }

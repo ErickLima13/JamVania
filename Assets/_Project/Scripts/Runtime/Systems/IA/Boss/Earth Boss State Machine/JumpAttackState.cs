@@ -29,8 +29,6 @@ public class JumpAttackState : EarthState
 
         DisableAll();
         canJump = true;
-        print("Jump");
-
     }
 
     public override void Exit()
@@ -56,6 +54,8 @@ public class JumpAttackState : EarthState
 
     public IEnumerator JumpAttackCorrotine()
     {
+       
+
         int idAttack = 0;
 
         yield return new WaitForSeconds(attackThornDuration);

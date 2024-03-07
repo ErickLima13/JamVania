@@ -12,7 +12,7 @@ public class IceThorn : MonoBehaviour
         body2d = GetComponent<Rigidbody2D>();
         body2d.gravityScale = Random.Range(0.1f, 0.3f);
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 4f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,8 +24,6 @@ public class IceThorn : MonoBehaviour
                 player.HealthChange(1);
                 Destroy(gameObject);
             }
-
-
         }
     }
 }

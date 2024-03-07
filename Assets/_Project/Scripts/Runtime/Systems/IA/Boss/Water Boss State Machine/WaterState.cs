@@ -10,8 +10,11 @@ public class WaterState : MonoBehaviour
 
     protected WaterBoss waterBoss;
 
+    [SerializeField] protected string animName;
+
     public virtual void Enter()
     {
+        waterBoss.animator.Play(animName);
         Debug.LogWarning(gameObject.name);
     }
 

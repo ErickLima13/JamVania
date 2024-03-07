@@ -8,8 +8,11 @@ public class EarthState : MonoBehaviour
 
     protected EarthBoss earthBoss;
 
+    [SerializeField] protected string animName;
+
     public virtual void Enter()
     {
+        earthBoss.animator.Play(animName);
     }
 
     public virtual void Do()

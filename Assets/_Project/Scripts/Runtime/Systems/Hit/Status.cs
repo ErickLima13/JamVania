@@ -26,7 +26,7 @@ public class Status : MonoBehaviour
         if (maxLife <= 0)
         {
             OnDie?.Invoke();
-            Destroy(gameObject, 0.1f);
+            //Destroy(gameObject, 1.4f);
         }
     }
 }

@@ -42,7 +42,7 @@ public class BombAttackState : EarthState
     {
         yield return new WaitForSeconds(0.5f);
 
-        GameObject temp = Instantiate(bombPrefab, earthBoss.transform.position, earthBoss.transform.rotation);
+        GameObject temp = Instantiate(bombPrefab, transform.position, earthBoss.transform.rotation);
         temp.transform.localScale = new(temp.transform.localScale.x * earthBoss.transform.localScale.x, temp.transform.localScale.y);
 
         currentBombs++;
