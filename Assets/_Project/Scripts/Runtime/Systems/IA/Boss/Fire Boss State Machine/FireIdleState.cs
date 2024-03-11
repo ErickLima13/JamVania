@@ -2,17 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireIdleState : MonoBehaviour
+public class FireIdleState : FireState
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<FireState> fireStates = new();
+
+    private int idState;
+
+    public int idleTimer;
+
+    public override void Do()
     {
-        
+        base.Do();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        base.Enter();
+        StartCoroutine(IdleDelay());
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        idState++;
+        if (idState >= fireStates.Count)
+        {
+            idState = 0;
+        }
+    }
+
+    public override void FixedDo()
+    {
+        base.FixedDo();
+    }
+
+    private IEnumerator IdleDelay()
+    {
+        yield return new WaitForSeconds(idleTimer);
+
+        fireBoss.ChangeState(fireStates[idState]);
     }
 }

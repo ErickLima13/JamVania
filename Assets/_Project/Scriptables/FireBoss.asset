@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd8a8eb5d0b111945ba663e3c35718c3, type: 3}
-  m_Name: EnemyA
+  m_Script: {fileID: 11500000, guid: 35b7f8340232cc444aceaec16093678b, type: 3}
+  m_Name: FireBoss
   m_EditorClassIdentifier: 
-  speed: 2
-  timerPatrol: 2
-  distance: 0.5
-  distanceAttack: 7
-  attackTime: 2
-  damage: 1
+  wallDistance: 3
+  speed: 6

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -7,6 +5,8 @@ public class Bomb : MonoBehaviour
     public float speed;
 
     public float lifeTime;
+
+    public bool noGravity;
 
     private void Start()
     {
@@ -20,13 +20,22 @@ public class Bomb : MonoBehaviour
 
     private void Shoot()
     {
-        Vector2 scale = new Vector2(transform.localScale.x, 0.5f);
+        Vector2 scale;
+        if (!noGravity)
+        {
+            scale = new Vector2(transform.localScale.x, 0.5f);
+        }
+        else
+        {
+            scale = new Vector2(transform.localScale.x, 0);
+        }
+
         transform.Translate(speed * Time.deltaTime * scale);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.TryGetComponent(out Status player))
+        if (collision.gameObject.TryGetComponent(out Status player))
         {
             if (player.statusTag == StatusTag.Player)
             {
