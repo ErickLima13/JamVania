@@ -10,6 +10,7 @@ public class FireBoss : MonoBehaviour
     public FireIdleState idleState;
     public FireDeathState deathState;
     public FireJumpAttack jumpAttack;
+    public HitTheGround hitTheGround;
 
     public Animator animator;
 
@@ -36,6 +37,7 @@ public class FireBoss : MonoBehaviour
         idleState.Setup(bossData, this);
         fireBallState.Setup(bossData, this);
         deathState.Setup(bossData, this);
+        hitTheGround.Setup(bossData, this);
 
         ChangeState(idleState);
 

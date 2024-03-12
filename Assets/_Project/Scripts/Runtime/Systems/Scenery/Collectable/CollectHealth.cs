@@ -21,9 +21,9 @@ public class CollectHealth : MonoBehaviour
             if (isAttribute)
             {
                 healthStatus = player.GetComponent<Status>();
-                if (healthStatus.maxLife < 10)
+                if (healthStatus.currentLife < 10)
                 {
-                    healthStatus.maxLife++;
+                    healthStatus.currentLife++;
                     healthController.ControlHealth();
                 }
             }

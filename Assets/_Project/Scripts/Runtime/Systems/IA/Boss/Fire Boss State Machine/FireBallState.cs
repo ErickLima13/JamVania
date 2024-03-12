@@ -41,7 +41,7 @@ public class FireBallState : FireState
         yield return new WaitForSeconds(0.5f);
 
         GameObject temp = Instantiate(fireBallPrefab, transform.position, fireBoss.transform.rotation);
-        //temp.transform.localScale = new(temp.transform.localScale.x * fireBoss.transform.localScale.x, temp.transform.localScale.y);
+        temp.transform.localScale = new(temp.transform.localScale.x * fireBoss.transform.localScale.x, temp.transform.localScale.y);
 
         yield return new WaitForSeconds(1f);
 

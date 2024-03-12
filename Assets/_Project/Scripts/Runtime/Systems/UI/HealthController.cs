@@ -39,7 +39,7 @@ public class HealthController : MonoBehaviour
     private void TakeHit()
     {
         healthRenderers[currentHealth - 1].sprite = healthTextures[0];
-        currentHealth = status.maxLife;
+        currentHealth = status.currentLife;
     }
 
     public void GetHealth()
@@ -47,6 +47,7 @@ public class HealthController : MonoBehaviour
         if (currentHealth < maxHealth)
         {
             status.maxLife++;
+            status.currentLife = status.maxLife;
             currentHealth = status.maxLife;
             healthRenderers[currentHealth - 1].sprite = healthTextures[1];
         }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
@@ -5,6 +6,7 @@ public class HitBox : MonoBehaviour
     [SerializeField] private int damage;
 
     [SerializeField] private bool isPlayer;
+
 
     public void SetDamage(int value)
     {

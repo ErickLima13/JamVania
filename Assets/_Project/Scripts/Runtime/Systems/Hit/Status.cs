@@ -19,21 +19,48 @@ public class Status : MonoBehaviour
 
     public int maxLife;
 
+    public int currentLife;
+
+    private HealthEnemies healthEnemies;
+
+    private void Start()
+    {
+        currentLife = maxLife;
+
+        healthEnemies = FindObjectOfType<HealthEnemies>();
+
+    }
+
     public void HealthChange(int value)
     {
         //GameObject temp = Instantiate(hitPrefab, transform.position, Quaternion.identity);
         //Destroy(temp, 0.5f);
-        maxLife -= value;
+        currentLife -= value;
+
+        float perc = currentLife / (float)maxLife;
+
+        if (perc < 0)
+        {
+            perc = 0;
+        }
+
+        Debug.LogWarning(perc);
 
         if (statusTag.Equals(StatusTag.Player))
         {
             OnPlayerHit?.Invoke();
         }
 
-        if (maxLife <= 0)
+        if(statusTag.Equals(StatusTag.Enemy))
+        {
+            healthEnemies.ShowHealth(perc);
+        }
+
+        if (currentLife <= 0)
         {
             OnDie?.Invoke();
             //Destroy(gameObject, 1.4f);
         }
     }
+
 }
