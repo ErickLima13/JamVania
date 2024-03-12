@@ -10,7 +10,8 @@ public class EnemyA : MonoBehaviour
         Attack
     }
 
-    private bool isLeft;
+    private Status status;
+    private bool isLeft = true;
     private bool isAttack;
 
     private Animator animator;
@@ -27,14 +28,31 @@ public class EnemyA : MonoBehaviour
 
     [SerializeField] private Transform wallCheck;
     [SerializeField] private Transform viewPos;
+    [SerializeField] private Transform firePos;
 
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private LayerMask wallLayer;
 
+    [SerializeField] private GameObject attackPrefab;
+
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        status = GetComponent<Status>();
+        animator = GetComponentInChildren<Animator>();
         hitBox = GetComponentInChildren<HitBox>();
+
+        status.OnDie += Death;
+    }
+
+    private void OnDestroy()
+    {
+        status.OnDie -= Death;
+    }
+
+    private void Death()
+    {
+        animator.SetTrigger("death");
+        Destroy(gameObject,0.8f);
     }
 
     private void Update()
@@ -146,6 +164,10 @@ public class EnemyA : MonoBehaviour
         isAttack = true;
         animator.SetBool("walk", false);
         animator.SetTrigger("attack");
+
+        yield return new WaitForSeconds(0.7f);
+
+        GameObject temp = Instantiate(attackPrefab, firePos.position, transform.rotation);
 
         yield return new WaitForSeconds(enemyData.attackTime);
 

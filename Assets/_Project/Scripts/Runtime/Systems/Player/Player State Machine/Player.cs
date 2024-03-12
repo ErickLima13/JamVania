@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 {
     public event Action<string> OnAnimationEndEvent;
 
+    public SoundEffects soundEffects;
+
     #region State machine
     public PlayerStateMachine StateMachine
     {
@@ -90,6 +92,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        soundEffects = GetComponentInChildren<SoundEffects>();
         Animator = GetComponent<Animator>();
         PlayerRb = GetComponent<Rigidbody2D>();
         HitBox = GetComponentInChildren<HitBox>();

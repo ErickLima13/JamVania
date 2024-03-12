@@ -27,6 +27,7 @@ public class PlayerMainAttackState : PlayerAttackState
     {
         base.Enter();
         canFlip = false;
+        player.soundEffects.PlayEffect();
         player.HitBox.SetDamage(playerData.damage);
     }
 

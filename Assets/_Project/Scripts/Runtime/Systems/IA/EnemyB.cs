@@ -1,41 +1,54 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class EnemyB : MonoBehaviour
 {
     private Transform player;
-    private Animator animator;
 
-    private bool canAttack;
+    private Status statusPlayer;
+
+    private Status mStatus;
 
     private float speed;
 
     [SerializeField] private EnemyData enemyData;
 
+    public float attackTime;
+
+    public float positionY;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         player = FindObjectOfType<Player>().transform;
+        statusPlayer = player.GetComponent<Status>();
 
+        mStatus  = GetComponent<Status>();
+
+        mStatus.OnDie += Death;
         speed = enemyData.speed;
+
+        
     }
 
     private void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) > enemyData.distanceAttack)
+        Vector3 newPos = new(player.position.x, positionY, player.position.z);
+        if (Vector2.Distance(transform.position, newPos) > enemyData.distanceAttack)
         {
-            animator.SetBool("walk", true);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            attackTime = 0;
+            transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
         }
         else
         {
-            if (!canAttack)
+            attackTime += Time.deltaTime;
+            if (attackTime >= 0.6f)
             {
-                StartCoroutine(AttackDelay());
+                statusPlayer.HealthChange(1);
+                attackTime = 0;
             }
         }
-
+    
         Flip();
     }
 
@@ -51,14 +64,13 @@ public class EnemyB : MonoBehaviour
         }
     }
 
-    private IEnumerator AttackDelay()
+    private void Death()
     {
-        animator.SetBool("walk", false);
-        animator.SetTrigger("attack");
-        canAttack = true;
+        Destroy(gameObject,0.1f);
+    }
 
-        yield return new WaitForSeconds(enemyData.attackTime);
-
-        canAttack = false;
+    private void OnDestroy()
+    {
+        mStatus.OnDie -= Death;
     }
 }
