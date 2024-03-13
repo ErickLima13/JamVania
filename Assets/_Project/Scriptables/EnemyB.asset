@@ -16,5 +16,5 @@ MonoBehaviour:
   timerPatrol: 2
   distance: 0.1
   distanceAttack: 0.8
-  attackTime: 0.8
+  attackTime: 1.5
   damage: 1

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 954be41e1f329a54e8f49a1c119e253b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffects: {fileID: 0}
   playerData: {fileID: 11400000, guid: d4c2e78279631a84fbbee6c2fc758f33, type: 2}
   groundCheck: {fileID: 2578441524849059180}
   boxSize: {x: 0.5, y: 0.01}
@@ -170,8 +171,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusTag: 1
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitPrefab: {fileID: 0}
   maxLife: 55
+  currentLife: 0
+  canHit: 0
 --- !u!61 &6746229189393235407
 BoxCollider2D:
   m_ObjectHideFlags: 0

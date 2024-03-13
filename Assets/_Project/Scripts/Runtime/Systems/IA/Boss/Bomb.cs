@@ -39,7 +39,7 @@ public class Bomb : MonoBehaviour
         {
             if (player.statusTag == StatusTag.Player)
             {
-                player.HealthChange(1);
+                player.HealthChange(1,gameObject);
                 Destroy(gameObject);
             }
         }

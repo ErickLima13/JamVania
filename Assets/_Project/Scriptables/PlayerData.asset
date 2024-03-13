@@ -18,6 +18,8 @@ MonoBehaviour:
   dashForce: 8
   gravityScale: 2.5
   maxFallSpeed: -12
+  strength: 10
+  delay: 0.3
   damage: 1
   canDash: 1
   canDoubleJump: 1

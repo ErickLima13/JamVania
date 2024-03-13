@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class HitBox : MonoBehaviour
@@ -22,13 +21,13 @@ public class HitBox : MonoBehaviour
                 case StatusTag.Enemy:
                     if (isPlayer)
                     {
-                        target.HealthChange(damage);
+                        target.HealthChange(damage, gameObject);
                     }
                     break;
                 case StatusTag.Player:
                     if (!isPlayer)
                     {
-                        target.HealthChange(damage);
+                        target.HealthChange(damage, gameObject);
                     }
                     break;
             }

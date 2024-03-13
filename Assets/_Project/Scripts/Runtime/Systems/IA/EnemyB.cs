@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 public class EnemyB : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class EnemyB : MonoBehaviour
 
     [SerializeField] private EnemyData enemyData;
 
-    public float attackTime;
+    public float waitTime;
 
     public float positionY;
 
@@ -23,12 +21,12 @@ public class EnemyB : MonoBehaviour
         player = FindObjectOfType<Player>().transform;
         statusPlayer = player.GetComponent<Status>();
 
-        mStatus  = GetComponent<Status>();
+        mStatus = GetComponent<Status>();
 
         mStatus.OnDie += Death;
         speed = enemyData.speed;
 
-        
+
     }
 
     private void Update()
@@ -36,19 +34,19 @@ public class EnemyB : MonoBehaviour
         Vector3 newPos = new(player.position.x, positionY, player.position.z);
         if (Vector2.Distance(transform.position, newPos) > enemyData.distanceAttack)
         {
-            attackTime = 0;
+            waitTime = 0;
             transform.position = Vector3.MoveTowards(transform.position, newPos, speed * Time.deltaTime);
         }
         else
         {
-            attackTime += Time.deltaTime;
-            if (attackTime >= 0.6f)
+            waitTime += Time.deltaTime;
+            if (waitTime >= enemyData.attackTime)
             {
-                statusPlayer.HealthChange(1);
-                attackTime = 0;
+                statusPlayer.HealthChange(1, gameObject);
+                waitTime = 0;
             }
         }
-    
+
         Flip();
     }
 
@@ -66,7 +64,7 @@ public class EnemyB : MonoBehaviour
 
     private void Death()
     {
-        Destroy(gameObject,0.1f);
+        Destroy(gameObject, 0.1f);
     }
 
     private void OnDestroy()

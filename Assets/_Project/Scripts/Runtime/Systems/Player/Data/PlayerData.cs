@@ -11,11 +11,13 @@ public class PlayerData : ScriptableObject
     public float dashForce = 1.6f;
     public float gravityScale = 1;
     public float maxFallSpeed = -6;
+    public float strength = 16;
+    public float delay = 0.15f;
+
     public int damage = 1;
 
     public bool canDash;
     public bool canDoubleJump;
-
 
     [Header("Power Ups")]
     public bool dashEnable;

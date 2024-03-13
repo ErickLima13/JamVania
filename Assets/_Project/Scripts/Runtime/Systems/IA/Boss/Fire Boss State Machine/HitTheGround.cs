@@ -12,8 +12,6 @@ public class HitTheGround : FireState
 
     public float timerToAlert;
 
-
-
     private void Start()
     {
         player = FindObjectOfType<Player>().transform;
@@ -43,7 +41,7 @@ public class HitTheGround : FireState
 
         effectAnimator.Play("fireInGround");
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.9f);
 
         alertObject.SetActive(false);
 

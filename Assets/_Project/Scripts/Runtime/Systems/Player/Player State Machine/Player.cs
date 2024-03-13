@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
         get; private set;
     }
 
+    public PlayerDamageState DamageState
+    {
+        get; private set;
+    }
+
     public Animator Animator
     {
         get; private set;
@@ -88,6 +93,7 @@ public class Player : MonoBehaviour
         FallState = new PlayerFallState(this, StateMachine, playerData, "fall");
         MainAttackState = new PlayerMainAttackState(this, StateMachine, playerData, "attack2");
         DashState = new PlayerDashState(this, StateMachine, playerData, "dash");
+        DamageState = new PlayerDamageState(this, StateMachine, playerData, "hit");
     }
 
     private void Start()
@@ -112,6 +118,16 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         StateMachine.CurrentState.PhysicsUpdate();   
+    }
+
+    public void EnterDamageState(GameObject target)
+    {
+        if (StateMachine.CurrentState != DamageState)
+        {
+            print("AQUIII");
+            DamageState.direction = target.transform.position;
+            StateMachine.ChangeState(DamageState);
+        }  
     }
 
     public bool IsGrounded()

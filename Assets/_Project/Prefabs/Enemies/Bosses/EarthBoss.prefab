@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6192836706443730208
 Transform:
   m_ObjectHideFlags: 0
@@ -497,8 +497,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusTag: 0
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
   hitPrefab: {fileID: 0}
   maxLife: 15
+  currentLife: 0
+  canHit: 0
 --- !u!1 &5607076619230382072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1060,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18145253, y: 0.64919955}
+  m_Offset: {x: 1.0817606, y: 0.49485338}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1066,7 +1071,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.362905, y: 1.8439595}
+  m_Size: {x: 0.22251642, y: 1.1863105}
   m_EdgeRadius: 0
 --- !u!114 &4491559902890544942
 MonoBehaviour:
@@ -1080,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c136e82dd9fb751478326d269e6f44c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
   isPlayer: 0
 --- !u!1 &6123204995066808809
 GameObject:
